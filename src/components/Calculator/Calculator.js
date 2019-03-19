@@ -7,9 +7,11 @@ import {
   FormControlLabel,
   Radio,
   TextField,
+  Typography,
 } from '@material-ui/core';
 import apartmentOptions from './apartmentOptions';
 import PriceTable from './PriceTable';
+import MeterPriceTable from './MeterPriceTable';
 
 class Calculator extends Component {
   state = {
@@ -71,7 +73,7 @@ class Calculator extends Component {
     const adjustedPrice = Math.round(this.calculateMeterPrice());
     const totalPrice = Math.round(this.calculateTotalPrice());
     const {
-      selectedOptions, placement, floors, meterPrice,
+      selectedOptions, placement, floors, meterPrice, floorSize,
     } = this.state;
     return (
       <div>
@@ -122,7 +124,10 @@ class Calculator extends Component {
           }}
           margin="normal"
         />
+        <Typography component="h2">Prijzen</Typography>
         <PriceTable meterPrice={adjustedPrice} totalPrice={totalPrice} basePrice={meterPrice} />
+        <Typography component="h2">Meter Prijzen</Typography>
+        <MeterPriceTable floorSize={floorSize} basePrice={meterPrice} />
       </div>
     );
   }
