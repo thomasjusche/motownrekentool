@@ -9,9 +9,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
-import Header from './header';
-import './layout.css';
+// import './layout.css';
+import 'typeface-roboto';
 import { withStyles } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Header from './header';
 import withRoot from '../withRoot';
 
 const styles = theme => ({
@@ -35,12 +37,14 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
+        <CssBaseline />
         <div
           style={{
             margin: '0 auto',
             maxWidth: '90%',
             padding: '0px 1.0875rem 1.45rem',
             paddingTop: 0,
+            fontFamily: 'Roboto, sans-serif',
           }}
         >
           <main>{children}</main>
