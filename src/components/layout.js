@@ -11,6 +11,15 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
 import './layout.css';
+import { withStyles } from '@material-ui/core/styles';
+import withRoot from '../withRoot';
+
+const styles = theme => ({
+  root: {
+    textAlign: 'center',
+    paddingTop: theme.spacing.unit * 20,
+  },
+});
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -36,7 +45,7 @@ const Layout = ({ children }) => (
         >
           <main>{children}</main>
           <footer>
-            <a href="https://www.nieuwbouwmotown.nl/">Visit the website</a>
+            <a href="https://www.nieuwbouwmotown.nl/">Bezoek de MO*Town website</a>
           </footer>
         </div>
       </>
@@ -48,4 +57,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Layout;
+export default withRoot(withStyles(styles)(Layout));
