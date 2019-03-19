@@ -2,7 +2,7 @@ const initialState = {
   placement: [
     {
       name: 'noord',
-      factor: 1.02,
+      factor: 0.98,
     },
     {
       name: 'oost',
