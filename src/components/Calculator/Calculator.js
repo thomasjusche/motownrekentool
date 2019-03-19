@@ -7,7 +7,6 @@ import {
   FormControlLabel,
   Radio,
   TextField,
-  Divider,
 } from '@material-ui/core';
 import apartmentOptions from './apartmentOptions';
 import PriceTable from './PriceTable';
@@ -17,8 +16,8 @@ class Calculator extends Component {
     ...apartmentOptions,
     meterPrice: 5770,
     selectedOptions: {
-      selectedPlacement: 0,
-      selectedFloor: 0,
+      selectedPlacement: 1,
+      selectedFloor: 3,
       selectedFloorSize: 63,
     },
   }
@@ -69,9 +68,11 @@ class Calculator extends Component {
 
   render() {
     // TODO: Better rounding
-    const meterPrice = Math.round(this.calculateMeterPrice());
+    const adjustedPrice = Math.round(this.calculateMeterPrice());
     const totalPrice = Math.round(this.calculateTotalPrice());
-    const { selectedOptions, placement, floors } = this.state;
+    const {
+      selectedOptions, placement, floors, meterPrice,
+    } = this.state;
     return (
       <div>
         <FormControl component="fieldset">
@@ -93,7 +94,7 @@ class Calculator extends Component {
           </RadioGroup>
         </FormControl>
         <FormControl component="fieldset">
-          <FormLabel component="legend">Plek in gebouw</FormLabel>
+          <FormLabel component="legend">Verdieping</FormLabel>
           <RadioGroup
             aria-label="Verdieping"
             name="selectedFloor"
@@ -121,7 +122,7 @@ class Calculator extends Component {
           }}
           margin="normal"
         />
-        <PriceTable meterPrice={meterPrice} totalPrice={totalPrice} />
+        <PriceTable meterPrice={adjustedPrice} totalPrice={totalPrice} basePrice={meterPrice} />
       </div>
     );
   }

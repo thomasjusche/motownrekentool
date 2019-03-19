@@ -3,12 +3,19 @@ import {
   Paper, Table, TableBody, TableRow, TableCell,
 } from '@material-ui/core';
 
-const PriceTable = ({ meterPrice = 0, totalPrice = 0 }) => (
+const PriceTable = ({ meterPrice = 0, totalPrice = 0, basePrice = 0 }) => (
   <Paper>
     <Table>
       <TableBody>
         <TableRow>
-          <TableCell>Meterprijs:</TableCell>
+          <TableCell>Basis meterprijs:</TableCell>
+          <TableCell align="right">
+€
+            {basePrice}
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Meterprijs met verdeelsleutel:</TableCell>
           <TableCell align="right">
 €
             {meterPrice}

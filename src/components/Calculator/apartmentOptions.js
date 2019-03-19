@@ -35,15 +35,15 @@ const initialState = {
       factor: 1,
     },
     {
-      name: 'Vierde en vijfde verdiepeing',
+      name: 'Vierde en vijfde verdieping',
       factor: 1.005,
     },
     {
-      name: 'Zesde en zevende verdiepeing',
+      name: 'Zesde en zevende verdieping',
       factor: 1.01,
     },
     {
-      name: 'Achtste verdiepeing en hoger',
+      name: 'Achtste verdieping en hoger',
       factor: 1.015,
     },
     {
