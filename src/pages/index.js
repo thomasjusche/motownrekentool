@@ -1,21 +1,24 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { withStyles } from '@material-ui/core/styles';
+import withRoot from '../withRoot';
 
 import Layout from '../components/layout';
-import Image from '../components/image';
 import SEO from '../components/seo';
+import Calculator from '../components/Calculator/Calculator';
+
+const styles = theme => ({
+  root: {
+    textAlign: 'center',
+    paddingTop: theme.spacing.unit * 20,
+  },
+});
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <SEO title="Home" keywords={['MO*Town', 'Sloterdijk', 'Prijs']} lang="nl" />
+    <h1>Bereken hier de prijs van je woning!</h1>
+    <Calculator />
   </Layout>
 );
 
-export default IndexPage;
+export default withRoot(withStyles(styles)(IndexPage));

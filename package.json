@@ -1,10 +1,11 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "motown-rekentool",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Tool to calculate the total price for the MO*town project",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Thomas",
   "dependencies": {
+    "@material-ui/core": "^3.9.2",
     "gatsby": "^2.1.37",
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-manifest": "^2.0.24",
@@ -13,10 +14,12 @@
     "gatsby-plugin-sharp": "^2.0.29",
     "gatsby-source-filesystem": "^2.0.27",
     "gatsby-transformer-sharp": "^2.1.17",
+    "jss": "^9.8.7",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-jss": "^8.6.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
@@ -25,10 +28,12 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
+    "gh-pages": "^2.0.1",
     "prettier": "^1.16.4"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "MO*Town"
   ],
   "license": "MIT",
   "scripts": {
@@ -37,7 +42,8 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "repository": {
     "type": "git",
