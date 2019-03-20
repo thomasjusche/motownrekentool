@@ -21,7 +21,7 @@ module.exports = {
       options: {
         name: 'MO*Town Rekentool',
         short_name: 'MO*Town',
-        start_url: '/',
+        start_url: '/motownrekentool',
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
