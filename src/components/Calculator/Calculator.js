@@ -16,7 +16,7 @@ import MeterPriceTable from './MeterPriceTable';
 class Calculator extends Component {
   state = {
     ...apartmentOptions,
-    meterPrice: 5770,
+    meterPrice: 5750,
     selectedOptions: {
       selectedPlacement: 1,
       selectedFloor: 3,
