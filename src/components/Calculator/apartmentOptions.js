@@ -27,7 +27,7 @@ const initialState = {
       factor: 0.99,
     },
     {
-      name: 'Tweede verdiepeing',
+      name: 'Tweede verdieping',
       factor: 0.995,
     },
     {
