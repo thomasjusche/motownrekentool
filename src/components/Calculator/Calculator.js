@@ -63,7 +63,7 @@ class Calculator extends Component {
     this.setState({
       selectedOptions: {
         ...selectedOptions,
-        [field]: +e.target.value,
+        [field]: +e.target.value || '',
       },
     });
   }

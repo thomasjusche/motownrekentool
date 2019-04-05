@@ -57,7 +57,7 @@ const initialState = {
   ],
   floorSize: [
     {
-      min: 40,
+      min: 0,
       max: 45,
       factor: 1.15,
     },

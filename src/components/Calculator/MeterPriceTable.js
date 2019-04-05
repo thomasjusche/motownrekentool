@@ -17,7 +17,7 @@ const MeterPriceTable = ({ floorSize, basePrice }) => (
       </TableHead>
       <TableBody>
         {floorSize.map(size => (
-          <TableRow>
+          <TableRow key={size.min}>
             <TableCell>{size.min}</TableCell>
             <TableCell>{size.max}</TableCell>
             <TableCell>{size.factor}</TableCell>
