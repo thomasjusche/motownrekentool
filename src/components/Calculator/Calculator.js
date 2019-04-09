@@ -63,7 +63,7 @@ class Calculator extends Component {
     this.setState({
       selectedOptions: {
         ...selectedOptions,
-        [field]: +e.target.value || '',
+        [field]: +e.target.value,
       },
     });
   }
@@ -116,7 +116,7 @@ class Calculator extends Component {
         <TextField
           id="standard-number"
           label="Grootte woning in meters"
-          value={selectedOptions.selectedFloorSize}
+          value={selectedOptions.selectedFloorSize || ''}
           onChange={e => this.handleChange(e, 'selectedFloorSize')}
           type="number"
           InputLabelProps={{
